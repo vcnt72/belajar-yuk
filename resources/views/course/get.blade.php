@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="container">
-    <div class="pizza-list-container">
+    <div>
+        <a href="{{ route('create_course_view') }}" class="btn btn-primary">Add Course</a>
         <div class="row">
             @foreach ($courses as $course)
             <div class="col-md-3 mr-2">
