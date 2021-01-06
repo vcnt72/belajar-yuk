@@ -57,6 +57,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('get_cart') }}">Carts</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('my_course') }}">Carts</a>
+                        </li>
                         @endif
 
                         @if (Auth::user()->role->name == 'admin')
