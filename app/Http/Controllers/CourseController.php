@@ -16,9 +16,23 @@ class CourseController extends Controller
         $courses = Course::whereHas('transactions.user', function(Builder $query) use ($user){
             $query->where('id' , '=', $user->id);
         })->get();
-
         return view('course.my', [
             'courses' => $courses
+        ]);
+    }
+
+    public function my_course_details(Request $req, $id) {
+        $user = $req->user();
+        $course = Course::whereHas('transactions.user', function(Builder $query) use ($user){
+            $query->where('id' , '=', $user->id);
+        })->where('id' , '=', $id)->first();        
+        
+        if($course == null){
+            abort(404);
+        }
+
+        return view('course.my_details', [
+            'course' => $course
         ]);
     }
 

@@ -37,8 +37,9 @@
                             <th>
                                 Title
                             </th>
-
-
+                            <th>
+                                Link
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,20 +51,14 @@
                             <td>
                                 {{$video->title}}
                             </td>
-
-
+                            <td>
+                                <a
+                                    href="{{ route('get_video', ['id'=>$course->id,'order' => $video->order]) }}">Link</a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-
-                <form action="{{ route('add_cart', ['id'=>$course->id]) }}" method="POST">
-                    @csrf
-                    <input type="text" value="{{$course->id}}" name="id" class="invisible">
-
-                    <button type="submit" class="btn btn-primary">Add to cart</button>
-                </form>
-
                 @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>

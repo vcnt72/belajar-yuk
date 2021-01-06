@@ -24,6 +24,7 @@ Auth::routes();
 
 Route::get('/course/create','CourseController@create_view')->middleware('auth.check.admin')->name('create_course_view');
 Route::post('/course','CourseController@create')->middleware('auth.check.admin')->name('create_course');
+Route::get('/course/my','CourseController@my_course')->middleware('auth.check.user')->name('my_course');
 
 Route::get('/','CourseController@get')->name('get_course');
 Route::get('/course/update/{id}','CourseController@update_view')->middleware('auth.check.admin')->name('update_course_view');
@@ -35,6 +36,8 @@ Route::get('/course/{id}/video/create','VideoController@add_view')->middleware('
 Route::post('/course/{course_id}/video','VideoController@addVideo')->middleware('auth.check.admin')->name('create_video');
 Route::get('/course/{id}/video/{order}', 'VideoController@get_details')->name('get_video');
 
+Route::get('/course/my','CourseController@my_course')->middleware('auth.check.user')->name('my_course');
+Route::get('/course/my/{id}','CourseController@my_course_details')->middleware('auth.check.user')->name('my_course_details');
 Route::post('/course/{id}/cart','CartController@add')->middleware('auth')->name('add_cart');
 Route::delete('/course/{id}/cart','CartController@delete')->name('delete_cart');
 Route::get('/cart','CartController@get')->name('get_cart');
