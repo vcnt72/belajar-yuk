@@ -75,15 +75,14 @@
                             <div class="col-md-6">
                                 <select name="role" class="form-control">
                                     <option value="admin">Admin</option>
-                                    <option value="instructor">Instructor</option>
                                     <option value="user">User</option>
                                 </select>
                             </div>
 
                             @error('role')
                             <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
+                                <strong>{{ $message }}</strong>
+                            </span>
                             @enderror
                         </div>
 

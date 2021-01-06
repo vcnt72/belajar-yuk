@@ -16,7 +16,7 @@ class RoleSeeder extends Seeder
                 'name' => 'user'
             ),
             array(
-                'name' => 'instructor'
+                'name' => 'admin'
             )
         ));
     }
