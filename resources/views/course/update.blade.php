@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="col">
-            <img src="{{$course->thumbnail_url}}" width="600px" alt="">
+            <img src="{{asset($course->thumbnail_url)}}" width="600px" alt="">
         </div>
         <div class="col">
             <form enctype="multipart/form-data" action="{{ route('update_course', ['id' => $course->id]) }}"
