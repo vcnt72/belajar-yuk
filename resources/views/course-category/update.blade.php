@@ -8,9 +8,9 @@
                 <div class="card-header">Create Course</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('create_course_category') }}">
+                    <form method="POST" action="{{ route('update_course_category',['id' => $course_category->id]) }}">
                         @csrf
-
+                        @method('PUT')
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
 
