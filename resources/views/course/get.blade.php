@@ -23,7 +23,8 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <a href="" class="btn btn-primary">Update Course</a>
+                                    <a href="{{ route('update_course_view', ['id'=>$course->id]) }}"
+                                        class="btn btn-primary">Update Course</a>
                                 </div>
                                 <div class="col-md-6">
                                     <form method="POST" action="{{ route('delete_course', ['id'=>$course->id]) }}">
