@@ -15,7 +15,7 @@ class CreateTransactionCourseTable extends Migration
     {
         Schema::create('course_transaction', function (Blueprint $table) {
             $table->foreignId('transaction_id')->constrained();
-            $table->foreignId('course_id')->constrained();
+            $table->foreignId('course_id')->constrained()->onDelete('cascade');
         });
     }
 

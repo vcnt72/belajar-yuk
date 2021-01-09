@@ -28,9 +28,7 @@
                 <div class="form-group row">
                     <label for="thumbnail" class="col-md-4">Thumbnail</label>
                     <input id="thumbnail_img" type="file" class="form-control" name="thumbnail_img" required>
-
                 </div>
-
                 <div class="form-group row">
                     <label for="course_category_id" class="col-md-4 col-form-label">Category</label>
                     <select name="course_category_id" class="form-control">
